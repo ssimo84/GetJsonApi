@@ -12,7 +12,6 @@ class getjsonapi_cycle_widget extends WP_Widget {
 		$num = apply_filters( 'getjsonapi', $instance['num'], $instance );
 		$filter = apply_filters( 'getjsonapi', $instance['filter'], $instance );
 		$url = apply_filters( 'getjsonapi', $instance['url'], $instance );
-		echo $before_widget;
         if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
 		if ($filter=="CYCLE")

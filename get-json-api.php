@@ -42,28 +42,39 @@ function getjsonapi_install_jquery() {
 
 
 function getjsonapi_cycle($limit,$url){ 
+    ob_start();
 	$timestamp = rand(0,time());
-	echo '
-	<div class="get-json-api-slideshow_' . $timestamp . '">
+?>
+	<div class="get-json-api-slideshow get-json-api-slideshow_<?php echo $timestamp;?>">
 		<div class="cycle-slideshow" data-cycle-auto-height="container"></div>
 		<div class="ui-icon-loading"></div>
 		<div style="clear:both"></div>
 	</div>
-	';
+<?php
 	$script = getjsonapi_script($limit,"CYCLE",$timestamp,$url);
-	
+	$output = ob_get_contents();
+	ob_end_clean();
+
+	return $output;
 }
 
 function getjsonapi_list($limit,$url){
+ob_start();
 	$timestamp = rand(0,time());
-	echo '
-	<div class="get-json-api-list_' . $timestamp . '">
+?>
+
+	<div class="get-json-api-list_<?php echo $timestamp;?>">
 		<ul></ul>
 		<div class="ui-icon-loading"></div>
 		<div style="clear:both"></div>
 	</div>
-	';
+<?php
+
 	$script = getjsonapi_script($limit,"LIST",$timestamp,$url);
+	$output = ob_get_contents();
+	ob_end_clean();
+
+	return $output;
 }
 
 function getjsonapi_script($limit,$type,$timestamp,$url){
@@ -112,7 +123,7 @@ function getjsonapi_script($limit,$type,$timestamp,$url){
 						jQuery(".' . $class . '_' . $timestamp . ' .ui-icon-loading").remove();
 					},
 					error: function(request,error) 	{
-						jQuery(".<?php echo $class;?>").append (error);
+						jQuery(".' . $class . '").append (error);
 					}
 				});
 			}
