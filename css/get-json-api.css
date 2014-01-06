@@ -1,0 +1,16 @@
+.get-json-api-slideshow {
+	width:100%; text-align:center; 
+	height:auto;
+	margin:0; padding:0;
+}
+.get-json-api-slideshow .cycle-slideshow { width: 100%; height: auto;}
+.get-json-api-slideshow .cycle-slideshow img { width: 100%; height: auto }
+.ui-icon-loading{
+	background: transparent url(../img/350.gif) no-repeat center center;
+	z-index: 100;
+	position: relative!important;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+}
