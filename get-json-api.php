@@ -46,7 +46,7 @@ function getjsonapi_cycle($limit,$url){
 	$timestamp = rand(0,time());
 ?>
 	<div class="get-json-api-slideshow get-json-api-slideshow_<?php echo $timestamp;?>">
-		<div class="cycle-slideshow" data-cycle-auto-height="container"></div>
+		<div class="cycle-slideshow" data-cycle-auto-height="16:9"></div>
 		<div class="ui-icon-loading"></div>
 		<div style="clear:both"></div>
 	</div>
